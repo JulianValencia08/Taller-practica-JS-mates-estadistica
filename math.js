@@ -40,6 +40,17 @@ function calcularAlturaTriangulo(ladosEqui, base){
         return Math.sqrt(ladosEqui**2 - ((base**2) / 4))
     }
 }
+function calcularAlturaTrianguloEscaleno(lado1, lado2, base){
+    if(lado1 == lado2 || lado1 == base || lado2 == base){
+        console.warn('Este no es un triangulo escaleno');
+    }else {
+        const semiPerimetro = (lado1 + lado2 + base) / 2;
+        const h = (2 / lado1) * (Math.sqrt((semiPerimetro)*(semiPerimetro - lado1)*(semiPerimetro - lado2)*(semiPerimetro - base)))
+        return parseInt(h.toFixed(0));
+    }
+    
+}
+
 console.log({
     ladoTriangulo1,
     ladoTriangulo2,
